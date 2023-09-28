@@ -77,3 +77,39 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+<!-- FOLDER STRUCTURE -->
+
+1. components Folder -------
+
+This folder contains individual, reusable UI components that can be used across different screens or other components. Examples include buttons, headers, input fields, and custom UI element
+
+Example -
+
+Button.js: A reusable button component that can be used throughout your app.
+
+InputField.js: A reusable input field component for user input.
+
+Header.js: A custom header component that appears on multiple screens.
+
+CustomActivityIndicator.js: A custom loading indicator component.
+
+ComponentNameStyles.js: Component-specific styles if needed.
+
+2. screens Folder ------
+
+Each screen of your app is represented by a JavaScript file in this folder. Screens are typically composed of a combination of UI components, including those from the components folder.
+
+Example -
+
+HomeScreen.js: The main screen of your app that displays content when the app starts.
+
+ProfileScreen.js: A screen displaying user profile information.
+
+SearchScreen.js: A screen for searching and displaying search results.
+
+SettingsScreen.js: A screen for app settings and preferences.
+
+ScreenNameStyles.js: Screen-specific styles if needed.

@@ -1,46 +1,27 @@
 import {View, Text, Image, ScrollView} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { styles } from '../styles/screenStyles/ReceipeDetails';
 function ReceipeDetails({navigation, route}: any) {
   const {item} = route.params;
-  console.log(item);
+  // console.log(item);
   return (
-    <View style={{backgroundColor: '#6f4e37', flex: 1}}>
-      {/* <SafeAreaView>
-
-        </SafeAreaView> */}
+    <View style={styles.detailsBox}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
-          style={{
-            backgroundColor: '#fff',
-            flex: 1,
-            marginTop: 200,
-            borderTopLeftRadius: 56,
-            borderTopRightRadius: 56,
-            alignItems: 'center',
-            paddingHorizontal: 16,
-          }}>
+          style={styles.detailsPage}>
           <View
-            style={{
-              //    backgroundColor: 'red',
-              height: 300,
-              width: 300,
-              position: 'absolute',
-              top: -150,
-            }}>
+            style={styles.contentBox}>
             <Image
               source={item.image}
-              style={{width: '100%', height: '100%', resizeMode: 'contain'}}
+              style={styles.detailsScreenImage}
             />
           </View>
-          <Text style={{marginTop: 140, fontSize: 28, fontWeight: 'bold'}}>
+          <Text style={styles.items }>
             {item.name}
           </Text>
-          {/* <View style={{flex: 1}}> */}
-          {/* <ScrollView showsVerticalScrollIndicator={false}> */}
-          <Text style={{fontSize: 20, marginVertical: 16}}>
+          <Text style={styles.description}>
             {item.description}
           </Text>
-          <View style={{flexDirection: 'row', backgroundColor: 'yellow'}}>
+          {/* <View style={{flexDirection: 'row', backgroundColor: 'yellow'}}>
             <View
               style={{
                 backgroundColor: 'orange',
@@ -76,10 +57,8 @@ function ReceipeDetails({navigation, route}: any) {
                 {item.description}
               </Text>
             </View>
-          </View>
-          {/* </ScrollView> */}
+          </View> */}
         </View>
-        {/* </View> */}
       </ScrollView>
     </View>
   );
