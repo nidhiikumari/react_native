@@ -1,24 +1,23 @@
 import {View, Text, Image, ScrollView} from 'react-native';
-import { styles } from '../styles/screenStyles/ReceipeDetails';
+import {styles} from '../styles/screenStyles/ReceipeDetails';
 function ReceipeDetails({navigation, route}: any) {
   const {item} = route.params;
   // console.log(item);
   return (
     <View style={styles.detailsBox}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View
-          style={styles.detailsPage}>
-          <View
-            style={styles.contentBox}>
-            <Image
-              source={item.image}
-              style={styles.detailsScreenImage}
-            />
+        <View style={styles.detailsPage}>
+          <View style={styles.contentBox}>
+            <Image source={item.image} style={styles.detailsScreenImage} />
           </View>
-          <Text style={styles.items }>
+          <Text
+          style={styles.items}
+          >
             {item.name}
           </Text>
-          <Text style={styles.description}>
+          <Text
+          style={styles.description}
+          >
             {item.description}
           </Text>
           {/* <View style={{flexDirection: 'row', backgroundColor: 'yellow'}}>

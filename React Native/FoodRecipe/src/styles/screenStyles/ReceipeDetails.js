@@ -4,11 +4,12 @@ import {
     heightPercentageToDP as hp,
   } from 'react-native-responsive-screen';
 import colors from '../../themes/colors';
+import { fonts } from '../../themes/fonts';
 
 export const styles = StyleSheet.create({
 // details
 detailsPage: {
-  backgroundColor: '#fff',
+  backgroundColor: colors.white,
   flex: 1,
   marginTop: 200,
   borderTopLeftRadius: 56,
@@ -17,11 +18,11 @@ detailsPage: {
   paddingHorizontal: 16,
 },
 detailsBox: {
-  backgroundColor: '#6f4e37',
+  backgroundColor: colors.choco,
   flex: 1
 },
 contentView: {
-  backgroundColor: '#fff',
+  backgroundColor: colors.white,
   flex: 1,
   marginTop: 200,
   borderTopLeftRadius: 56,
@@ -38,15 +39,15 @@ contentBox: {
 detailsScreenImage: {
   width: '100%', 
   height: '100%',
-  resizeMode: 'contain'
+  resizeMode: 'contain',
 },
 items : {
   marginTop: 140,
-  fontSize: 28,
+  fontSize: hp(fonts.t4),
   fontWeight: 'bold'
 },
 description: {
-  fontSize: 20,
+  fontSize: hp(fonts.t3),
   marginVertical: 16
 }
 

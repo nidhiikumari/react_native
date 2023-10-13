@@ -3,7 +3,8 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
   } from 'react-native-responsive-screen';
-  import colors from '../../themes/colors';
+import colors from '../../themes/colors';
+import { fonts, FontFamily } from '../../themes/fonts';
 
 export const styles = StyleSheet.create({
     container: {
@@ -35,17 +36,17 @@ export const styles = StyleSheet.create({
     },
     greeting: {
       fontSize: hp(2.3),
-      fontFamily: 'RobotoSlab-Bold',
+      fontFamily: FontFamily.robotoB
     },
     greetingName: {
-      fontSize: hp(4),
+      fontSize: hp(fonts.t4),
       fontWeight: 'bold',
       letterSpacing: 2,
       color: colors.black,
-      fontFamily: 'RobotoSlab-Bold'
+      fontFamily: FontFamily.robotoB
     },
     inputField: {
-      fontSize: hp(1.9),
+      fontSize: hp(fonts.decimal1),
       flex: 1,
       marginBottom: 1,
       paddingLeft: 6
@@ -67,7 +68,7 @@ export const styles = StyleSheet.create({
      shadowOpacity: 0.1,
      shadowRadius: 7,
      marginVertical: 16,
-     fontSize: 18
+     fontSize: hp(fonts.t4)
     },
     receipeList: {
       backgroundColor: colors.pinkLight,

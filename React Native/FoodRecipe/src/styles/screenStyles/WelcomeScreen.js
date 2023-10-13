@@ -4,6 +4,8 @@ import {
     heightPercentageToDP as hp,
   } from 'react-native-responsive-screen';
 import colors from '../../themes/colors';
+import { FontFamily, fonts } from '../../themes/fonts';
+
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -11,7 +13,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center'
     },
     text: {
-      fontSize: hp(5),
+      fontSize: hp(fonts.t5),
       color: colors.red,
       letterSpacing: 3,
       alignItems: 'center',
@@ -20,7 +22,7 @@ export const styles = StyleSheet.create({
       margin: 3
     },
     title: {
-      fontSize: hp(9),
+      fontSize: hp(fonts.t9),
       color: colors.red,
       letterSpacing: 6,
       alignItems: 'center',
@@ -39,7 +41,7 @@ export const styles = StyleSheet.create({
       bottom: 0,
       justifyContent: 'center',
       alignItems: 'center',
-      fontFamily: 'Lato-Bold'
+      fontFamily: FontFamily.latoB
     },
     image: {
       width: wp('100%'), // applied to Image
@@ -54,9 +56,9 @@ export const styles = StyleSheet.create({
     },
     buttonText: {
       color: colors.white, // Text color of the button
-      fontSize: hp(5),
+      fontSize: hp(fonts.t5),
       fontWeight: 'bold',
       letterSpacing: 4,
-      fontFamily: 'RobotoSlab-Bold'
+      fontFamily: FontFamily.robotoB
     },
   });
