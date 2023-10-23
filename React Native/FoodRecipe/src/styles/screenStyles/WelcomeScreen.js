@@ -3,8 +3,8 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
   } from 'react-native-responsive-screen';
-import colors from '../../themes/colors';
-import { FontFamily, fonts } from '../../themes/fonts';
+import colorSet from '../../themes/colors';
+import { FontFamily, fontSet } from '../../themes/fonts';
 
 export const styles = StyleSheet.create({
     container: {
@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
       alignItems: 'center'
     },
     text: {
-      fontSize: hp(fonts.t5),
-      color: colors.red,
+      fontSize: fontSet.t5,
+      color: colorSet.red,
       letterSpacing: 3,
       alignItems: 'center',
       fontWeight: 'bold',
@@ -22,8 +22,8 @@ export const styles = StyleSheet.create({
       margin: 3
     },
     title: {
-      fontSize: hp(fonts.t9),
-      color: colors.red,
+      fontSize: fontSet.t9,
+      color: colorSet.red,
       letterSpacing: 6,
       alignItems: 'center',
       fontWeight: 'bold',
@@ -48,17 +48,17 @@ export const styles = StyleSheet.create({
       height: hp('100%')
     },
     welcomeButton: {
-      backgroundColor: colors.black,
+      backgroundColor: colorSet.black,
       padding: 15,
       borderRadius: 6,
       marginTop: 38,
       cursor: 'pointer'
     },
     buttonText: {
-      color: colors.white, // Text color of the button
-      fontSize: hp(fonts.t5),
+      color: colorSet.white, // Text color of the button
+      fontSize: fontSet.t5,
       fontWeight: 'bold',
       letterSpacing: 4,
       fontFamily: FontFamily.robotoB
-    },
+    }
   });
