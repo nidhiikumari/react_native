@@ -14,23 +14,24 @@ export const styles = StyleSheet.create({
     },
     text: {
       fontSize: fontSet.t5,
-      color: colorSet.red,
+      color:'white',
       letterSpacing: 3,
       alignItems: 'center',
       fontWeight: 'bold',
       justifyContent: 'center',
-      margin: 3
+      margin: 3,
+      textShadowColor: '#f4ca16',
+      textShadowRadius: 4
     },
     title: {
       fontSize: fontSet.t9,
-      color: colorSet.red,
+      color: 'white',
       letterSpacing: 6,
       alignItems: 'center',
       fontWeight: 'bold',
       justifyContent: 'center',
       margin: 3,
-      textShadowColor: 'rgba(0, 0, 0, 0.5)', // Shadow color
-      textShadowOffset: { width: 0, height: 4 }, // Shadow offset (x, y)
+      textShadowColor: '#f4ca16', // Shadow color
       textShadowRadius: 4 // Shadow blur radius
     },
     textContainer: {
@@ -48,9 +49,9 @@ export const styles = StyleSheet.create({
       height: hp('100%')
     },
     welcomeButton: {
-      backgroundColor: colorSet.black,
+      backgroundColor: '#f4ca16',
       padding: 15,
-      borderRadius: 6,
+      borderRadius: 13,
       marginTop: 38,
       cursor: 'pointer'
     },

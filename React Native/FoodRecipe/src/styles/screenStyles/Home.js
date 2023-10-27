@@ -6,43 +6,29 @@ import {
 import colorSet from '../../themes/colors';
 import { fontSet, FontFamily } from '../../themes/fonts';
 
-// shadowColor: 'yellow',
-//     shadowOffset: { width: 2, height: 2 },
-//     shadowOpacity: 0.5,
-//     shadowRadius: 5,
-//     backgroundColor: 'white',
-//     borderRadius: 10,
-
 export const styles = StyleSheet.create({
     container: {
       flex: 1, // Make the container flex
-      // backgroundColor: '#FAF0E6',
-      backgroundColor: colorSet.frost, // Example background color
-      padding: 13,
-    },
-    receipesList: {
-      backgroundColor: colorSet.frost
+      paddingHorizontal: 13,
+      backgroundColor: '#FFFFF'
     },
     headerSection: {
       flexDirection: 'row', // Arrange child components in a row
       justifyContent: 'space-between', // Space evenly along the main axis (horizontally)
       alignItems: 'center', // Align items along the cross axis (vertically)
       padding: 16, // Example padding
-      // borderBottomWidth: 1, // Example border
     },
     searchBox: {
       backgroundColor: colorSet.white,
       borderRadius: 19,
       padding: 5,
-      margin: 5,
+      top: -28,
+      marginBottom: 0,
       flexDirection: 'row', // Arrange child components in a row
       justifyContent: 'space-between',
       alignItems: 'center',
       elevation: 6,
-      shadowColor: colorSet.yellow,
-      shadowOffset: { width: 6, height: 2 },
-      shadowOpacity: 0.5,
-      shadowRadius: 8
+      shadowColor: '#f4ca16',
     },
     ring: {
       backgroundColor: colorSet.white,
@@ -51,22 +37,17 @@ export const styles = StyleSheet.create({
       height: hp(6),
       padding: 10,
     },
-    // greeting: {
-    //   fontSize: hp(2.3),
-    //   fontFamily: FontFamily.robotoB
-    // },
     greetingName: {
       fontSize: fontSet.t4,
       fontWeight: 'bold',
       letterSpacing: 2,
-      color: colorSet.black,
+      color: 'white',
       fontFamily: FontFamily.robotoB
     },
     inputField: {
       fontSize: fontSet.t2,
-      fontWeight: 'bold',
+      fontFamily: FontFamily.robotoB,
       flex: 1,
-      marginBottom: 1,
       paddingLeft: 6,
     },
     containerRoot: {
@@ -81,68 +62,57 @@ export const styles = StyleSheet.create({
      borderRadius: 8,
      paddingHorizontal: 16,
      paddingVertical: 10,
-     shadowColor: colorSet.black,
-     shadowOffset: {width: 0, height: 4},
      shadowOpacity: 0.1,
-     shadowRadius: 7,
      marginVertical: 16,
      fontSize: fontSet.t4,
-     elevation: 6,
-
-     shadowColor: colorSet.yellow,
-    shadowOffset: { width: 5, height: 5 },
-    shadowOpacity: 0.8,
-    shadowRadius: 8,
-    // backgroundColor: 'white',
-    // borderRadius: 10,
+     fontFamily: FontFamily.robotoB,
+     elevation: 12,
+    shadowColor: '#f4ca16',
+    shadowOffset: { width: 15, height: 15 },
+    shadowRadius: 8
     },
     categoryText: {
      fontSize: fontSet.t3,
      fontWeight: 'bold',
-     marginTop: 11,
+     fontFamily: FontFamily.robotoB,
+     marginTop: 0,
      color: colorSet.black
     },
     categoryList: {
      fontSize: fontSet.decimal2,
-     fontWeight: 'bold'
+     fontWeight: 'bold',
+    fontFamily: FontFamily.robotoB,
     },
     receipeBox: {
-      flex: 1
+      flex: 1,
+      backgroundColor: '#FFFFF'
     },
     imageStyle: {
-      height: hp(10),
-      width: wp(12)
+      height: hp(25),
+      width: wp(100),
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'flex-end'
     },
     receipeList: {
-      // backgroundColor: colorSet.lightColor,
-      // shadowColor: colorSet.black,
-
-    shadowColor: colorSet.yellow,
+    shadowColor: '#FC6A03',
     shadowOffset: { width: 5, height: 5 },
     shadowOpacity: 0.8,
     shadowRadius: 8,
-
-      // shadowOffset: {width: 3, height: 4},
-      // shadowOpacity: 0.1,
-      // shadowRadius: 17,
-
+    elevation: 6,
       marginVertical: 16,
-      alignItems: 'flex-start',
-      // paddingVertical: 26,
-      // paddingHorizontal: 8,
-      // elevation: 8,
-      // borderRadius: 30
+      alignItems: 'flex-start'
     },
     receipeImage: {
       height: hp(35),
       width: wp(45),
       marginBottom: 5,
       borderRadius: 16,
-
-      shadowColor: colorSet.yellow,
-    shadowOffset: { width: 5, height: 5 },
-    shadowOpacity: 0.8,
-    shadowRadius: 8,
+      shadowColor:'#FC6A03',
+      shadowOffset: { width: 5, height: 5 },
+      shadowOpacity: 0.8,
+      shadowRadius: 8,
     },
     itemsBox: {
       width: wp(42),
@@ -153,8 +123,10 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between'
     },
     items: {
-      fontSize: fontSet.decimal2,
+      marginTop: 7,
+      fontSize: fontSet.t3,
       color: colorSet.black,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fontFamily: FontFamily.robotoB
     }
   });

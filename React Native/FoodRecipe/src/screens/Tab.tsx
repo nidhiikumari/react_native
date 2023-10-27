@@ -1,5 +1,6 @@
 import {View, Text, ScrollView, Pressable} from 'react-native';
 import React from 'react';
+import {styles} from '../styles/screenStyles/ReceipeDetails';
 
 function Tab({setSelectedTab, selectedTab}: any) {
   return (
@@ -7,26 +8,19 @@ function Tab({setSelectedTab, selectedTab}: any) {
       <ScrollView horizontal>
         {['Ingrediants', 'Instructions'].map((list: any) => (
           <Pressable
-            style={{
-              padding: 34,
-              alignItems: 'center',
-            }}
+            style={styles.pressableTab}
             key={list}
             onPress={() => setSelectedTab(list)}>
-            <Text style={{fontWeight: 'bold', fontSize: 17, color: 'black'}}>
+            <Text
+              style={[
+                styles.tabText,
+                {
+                  color: list === selectedTab ? '#f4ca16' : 'black',
+                },
+              ]}>
               {list}
             </Text>
-            {selectedTab === list && (
-              <View
-                style={{
-                  height: 1,
-                  backgroundColor: 'yellow',
-                  width: 100,
-                  borderWidth: 0.5,
-                  margin: 3
-                }}
-              />
-            )}
+            {selectedTab === list && <View style={styles.lineIndicator} />}
           </Pressable>
         ))}
       </ScrollView>

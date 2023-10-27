@@ -4,8 +4,6 @@ import {styles} from '../../../styles/screenStyles/Home';
 import colorSet from '../../../themes/colors';
 
 function Category({mealCategory, setSelectedCategory, selectedCategory}: any) {
-  const Categories = ['Breakfast', 'Lunch', 'Snacks', 'Dinner'];
-
   return (
     <View>
       <Text style={styles.categoryText}>Category</Text>
@@ -18,14 +16,19 @@ function Category({mealCategory, setSelectedCategory, selectedCategory}: any) {
               styles.categoryBox,
               {
                 backgroundColor:
-                selectedCategory === items?.strCategory ? colorSet.yellow : colorSet.white,
+                  selectedCategory === items?.strCategory
+                    ? '#f4ca16'
+                    : colorSet.gray,
               },
             ]}>
             <Text
               style={[
                 styles.categoryList,
                 {
-                  color: selectedCategory === items?.strCategory ? colorSet.white : colorSet.black,
+                  color:
+                    selectedCategory === items?.strCategory
+                      ? colorSet.white
+                      : colorSet.black,
                 },
               ]}>
               {items?.strCategory}

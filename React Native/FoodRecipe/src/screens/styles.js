@@ -11,7 +11,6 @@ import { StyleSheet } from 'react-native';
       justifyContent: 'space-between', // Space evenly along the main axis (horizontally)
       alignItems: 'center', // Align items along the cross axis (vertically)
       padding: 16, // Example padding
-      // borderBottomWidth: 1, // Example border
     },
     searchBox: {
       backgroundColor: '#DCDCDC',
@@ -28,16 +27,8 @@ import { StyleSheet } from 'react-native';
       height: hp(6),
       padding: 10
     },
-    punchline: {
-      // marginBottom: 2,
-      //  margin
-      // margin
-    },
     greeting: {
       fontSize: hp(2.3),
-      // letterSpacing: 3,
-      // color: 'black',
-      // color: 'text-neutral-600',
       fontFamily: 'RobotoSlab-Bold'
     },
     greetingName: {

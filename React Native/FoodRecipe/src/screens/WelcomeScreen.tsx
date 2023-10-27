@@ -19,19 +19,18 @@ export default function WelcomeScreen(props: any) {
     <View>
       <ImageBackground
         fadeDuration={2000}
-        blurRadius={2}
-        source={require('../assests/images/spicy.jpg')}
+        blurRadius={1}
+        source={require('../assests/images/indian_wallpaper.jpg')}
         resizeMode="cover"
         style={styles.image}>
         <View style={styles.textContainer}>
           <Text style={styles.text} numberOfLines={1}>
-            Welcome to
+            Let's Start
           </Text>
-          <Text style={styles.title}>Receipes</Text>
           <TouchableHighlight
             style={styles.welcomeButton}
             onPress={handlePress}>
-            <Text style={styles.buttonText}>Start Cooking</Text>
+            <Text style={styles.buttonText}>Yummy Receipes</Text>
           </TouchableHighlight>
         </View>
       </ImageBackground>

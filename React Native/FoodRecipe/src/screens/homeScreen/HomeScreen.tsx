@@ -1,10 +1,20 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, ScrollView, Image, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TextInput,
+  ImageBackground,
+} from 'react-native';
 import {MagnifyingGlassIcon} from 'react-native-heroicons/outline';
+// @ts-ignore
+// import Icon from 'react-native-vector-icons/FontAwesome5';
 import Category from './category/category';
 import ReceipeList from './receipeList';
 import {styles} from '../../styles/screenStyles/Home';
 import {CommmonStyle} from '../../styles/globalStyles';
+
 import colorSet from '../../themes/colors';
 
 function HomeScreen() {
@@ -85,7 +95,7 @@ function HomeScreen() {
     setSearchString(value);
     // getMealsBySearch();
   };
-
+  //  #ffef00  #fff000 #ffc40c #f4ca16
   console.log(searchString, 'search');
 
   useEffect(() => {
@@ -113,52 +123,49 @@ function HomeScreen() {
   }, [selectedCategory]);
 
   return (
-    <View style={styles.container}>
+    <>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: 50}}>
-        <View style={styles.headerSection}>
+        <ImageBackground
+          fadeDuration={2000}
+          source={require('../../assests/images/receipe_wallpaper.jpg')}
+          resizeMode="cover"
+          style={styles.imageStyle}>
+          <View style={{paddingHorizontal: 2}}>
+            <Text style={styles.greetingName}>Just</Text>
+            <Text style={styles.greetingName}>Taste One</Text>
+            <Text style={styles.greetingName}>Peace........</Text>
+          </View>
+        </ImageBackground>
+        <View style={styles.container}>
+          <View style={styles.searchBox}>
+            <TextInput
+              placeholder="Search"
+              value={searchString}
+              placeholderTextColor={colorSet.lightGray}
+              style={styles.inputField}
+              onChangeText={changeHandler}
+            />
+            <View style={styles.ring}>
+              <MagnifyingGlassIcon color={'gray'} />
+            </View>
+          </View>
+          {/* <Icon name="movie" size={50} color="red" /> */}
           <View>
-            <Text style={CommmonStyle.greetingText}>Good Morning</Text>
-            <Text style={styles.greetingName}>Nidhi Kumari!</Text>
+            <Category
+              mealCategory={mealCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedCategory={selectedCategory}
+            />
           </View>
-          <Image
-            source={require('../../assests/images/women.jpg')}
-            style={styles.imageStyle}
-          />
-        </View>
-        <View style={styles.searchBox}>
-          <TextInput
-            placeholder="Search"
-            value={searchString}
-            placeholderTextColor={colorSet.lightGray}
-            style={styles.inputField}
-            onChangeText={changeHandler}
-          />
-          <View style={styles.ring}>
-            <MagnifyingGlassIcon color={'gray'} />
+          <View style={styles.receipeBox}>
+            <Text style={styles.categoryText}>{selectedCategory}</Text>
+            <ReceipeList categoryWiseList={categoryWiseList} />
           </View>
-        </View>
-
-        <View style={styles.containerRoot}>
-          <Image
-            source={require('../../assests/images/breakfast.jpg')}
-            style={styles.banner}
-          />
-        </View>
-        <View>
-          <Category
-            mealCategory={mealCategory}
-            setSelectedCategory={setSelectedCategory}
-            selectedCategory={selectedCategory}
-          />
-        </View>
-        <View style={styles.receipeBox}>
-          <Text style={styles.categoryText}>{selectedCategory}</Text>
-          <ReceipeList categoryWiseList={categoryWiseList} />
         </View>
       </ScrollView>
-    </View>
+    </>
   );
 }
 export default HomeScreen;

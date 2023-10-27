@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, ScrollView, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  ImageBackground
+} from 'react-native';
 import {styles} from '../styles/screenStyles/ReceipeDetails';
 import Tab from './Tab';
 
@@ -8,7 +13,6 @@ function ReceipeDetails({navigation, route}: any) {
   const [id, setId] = useState<number>(item?.idMeal);
   const [mealDetails, setMealDetails] = useState<any>();
   const [selectedTab, setSelectedTab] = useState<string>('Ingrediants');
-  console.log(item?.idMeal, 'itemmm');
 
   const getMealsDetailsById = async () => {
     if (item?.idMeal) {
@@ -21,12 +25,13 @@ function ReceipeDetails({navigation, route}: any) {
         }
         const apiData = await response.json();
         setMealDetails(apiData);
+        // console.log(apiData, 'api datat')
       } catch (error) {
         console.log('erro fetching');
       }
     }
   };
-
+  const TotalIngredients: any = [];
   const RecipeIngredients = (ingredients: any) => {
     const IngrediantsMeasures: any = [];
     for (let i = 1; i <= 20; i++) {
@@ -38,11 +43,12 @@ function ReceipeDetails({navigation, route}: any) {
       if (Ingredients && Measures) {
         IngrediantsMeasures.push(
           <Text
-            style={{color: 'black', fontSize: 20, marginVertical: 7}}
+            style={styles.ingredientList}
             key={i}>{`${Ingredients}  -  ${Measures}`}</Text>,
         );
       }
     }
+    TotalIngredients.push(IngrediantsMeasures?.length);
     return IngrediantsMeasures;
   };
 
@@ -55,34 +61,52 @@ function ReceipeDetails({navigation, route}: any) {
       <ScrollView showsVerticalScrollIndicator={false}>
         {mealDetails?.meals?.map((item: any) => (
           <View>
-            <Image
+            <ImageBackground
               source={{uri: item.strMealThumb}}
-              style={styles.detailsScreenImage}
-            />
+              style={styles.detailsScreenImage}></ImageBackground>
+
             <View style={styles.detailsPage}>
               <View>
                 <Text style={styles.items}>{item?.strMeal}</Text>
+                <View style={styles.receipeMenu}>
+                  <View style={styles.subMenu}>
+                    <Text style={styles.menuTitle}>Ingredients</Text>
+                    <Text style={styles.menuText}>{TotalIngredients}</Text>
+                  </View>
+                  <View style={styles.subMenu}>
+                    <Text style={styles.menuTitle}>Speciality</Text>
+                    <Text style={styles.menuText}>{item?.strArea}</Text>
+                  </View>
+                  <View style={styles.subMenu}>
+                    <Text style={styles.menuTitle}>
+                      {item?.strTags ? 'Tags' : 'Category'}
+                    </Text>
+                    <Text style={styles.menuText}>
+                      {item?.strTags ? item?.strTags : item?.strCategory}
+                    </Text>
+                  </View>
+                </View>
                 <View
-                  style={{
-                    marginVertical: 1,
-                    height: 100,
-                  }}>
-                  <Tab setSelectedTab={setSelectedTab} selectedTab={selectedTab} />
+                  style={styles.tabContainer}>
+                  <Tab
+                    setSelectedTab={setSelectedTab}
+                    selectedTab={selectedTab}
+                  />
                 </View>
               </View>
               <View>
                 {selectedTab === 'Ingrediants' ? (
                   <View>
-                    <View
-                      style={{
-                        alignItems: 'flex-start'
-                      }}>
+                    <View>
                       {RecipeIngredients(item)}
                     </View>
                   </View>
                 ) : (
-                  <View style={{paddingHorizontal: 15, paddingVertical: 15}}>
-                    <Text style={{ fontSize: 17, color: 'black' }}>{item?.strInstructions}</Text>
+                  <View
+                    style={styles.instructionContainer}>
+                    <Text style={styles.instructionText}>
+                      {item?.strInstructions}
+                    </Text>
                   </View>
                 )}
               </View>
