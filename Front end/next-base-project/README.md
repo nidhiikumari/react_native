@@ -2,12 +2,22 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This Project is Related to next auth, url based routing , role based routing, server/ client side rendering, dynamic routing, protected / unprotected routing, meta data
 -------- Pages -------------
--- Login/Sign up Page
+-- Login/Sign up Page 
+-- Mobile otp varification
+-- Dynamic Seo Meta Data 
 -- Token Based Routing
 -- Role based Routing
 -- Dynamic Routing
 -- seo optimisation
 -- protected/ unprotected routing 
+
+
+
+-- Components Folder Structure --
+Components folder naming should be in Pascal case example : 'Components >> Auth >> LoginForm >> index.tsx
+
+
+
 
 ## Getting Started
 

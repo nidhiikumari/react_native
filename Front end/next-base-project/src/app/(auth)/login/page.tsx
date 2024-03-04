@@ -1,3 +1,4 @@
+import LoginForm from "@/components/Auth/LoginForm";
 import React from "react";
 
 export default function Login() {
@@ -5,7 +6,7 @@ export default function Login() {
     <div>
       <div>
         <p>Login</p>
-        
+        <LoginForm />
       </div>
     </div>
   );
