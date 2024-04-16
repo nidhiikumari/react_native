@@ -1,0 +1,300 @@
+.markercluster-map {
+    height: 60vh;
+    width: 70vw;
+  }
+
+  .leaflet-div-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    /* Set the marker color here */
+    background: #aa3300;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-color: ipx solid white;
+
+    border-bottom-right-radius: 0;
+    position: relative;
+    transform: rotate(45deg);
+
+
+    /* optional fanciness */
+    border: 1px solid white;
+  }
+
+
+  .marker {
+    /* Set the marker size here */
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    /* Set the marker color here */
+    background: white;
+
+    display: inline-block;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    transform: rotate(45deg);
+
+    /* optional fanciness */
+    border: 1px solid white;
+}
+/* inner circle (optional if you don't need the central dot) */
+.marker::before {
+    content: "";
+    /* background: red; */
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* optional fanciness */
+    /* box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1); */
+}
+/* shadow (optional if you don't need a shadow) */
+/* .marker::after {
+    content: "";
+    background: rgba(128, 128, 128, 0.2);
+    width: 75%;
+    height: 75%;
+    border-radius: 100%;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(45deg) scaleX(0.5);
+} */
+
+  .flag-icon {
+
+  }
+
+  /* .leaflet-div-icon::before {
+    content: "";
+    background: white;
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+} */
+/* shadow (optional if you don't need a shadow) */
+/* .leaflet-div-icon::after {
+    content: "";
+    background: rgba(128, 128, 128, 0.2);
+    width: 75%;
+    height: 75%;
+    border-radius: 100%;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(45deg) scaleX(0.5);
+} */
+
+.circle {
+  /* display: block; */
+  /* height: 60px;
+  width: 60px; */
+  /* border-radius: 50%; */
+  background: rgb(30, 255, 0);
+  /* margin: 10px; */
+  /* transition: 5s ease; */
+  /* position: absolute; */
+  /* top: 0px; */
+}
+
+
+@keyframes circle {
+  100%{
+    transform: scale(2.5);
+  }
+}
+
+.circle-magic-kingdom {
+  /* fill: none; */
+  /* stroke: red; */
+  /* stroke-width: 5px; */
+  stroke: none;
+  fill-opacity: .4;
+  -webkit-text-fill-color: rgb(87, 5, 5);
+  background-color: rgb(87, 5, 5);
+  transition: 5s ease;
+  /* transform: scale(1.2); */
+  /* animation: MagicKingdom infinite 5s;
+  transition: background-color .5s; */
+  /* -webkit-animation: waves 2.5s linear 0.7s forwards; */
+  animation: waves infinite 5s;
+  /* transform: scale(); */
+  /* transition: 5s ease; */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  stroke: none;
+  /* position: absolute; */
+  background-color: #007bff;
+  border-radius: 50%;
+  margin: 10px;
+  animation: wave infinite;
+}
+
+.delay1 {
+  animation-delay: 0.1s;
+}
+
+.delay2 {
+  animation-delay: 0.2s;
+}
+
+
+/* @keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+} */
+
+.circle-magic-kingdom:hover {
+  stroke-width: 15px;
+}
+
+/* @-webkit-keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes bloop {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes bloop {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+} */
+
+@keyframes MagicKingdom {
+  0% {
+    background-color: rgb(242, 161, 161);
+  }
+  50% {
+    background-color: rgb(241, 83, 83);
+  }
+  /* 28% {
+    stroke: yellow;
+  }
+  43% {
+    stroke: lime;
+  }
+  57% {
+    stroke: blue;
+  }
+  71% {
+    stroke: blueviolet;
+  }
+  85% {
+    stroke: magenta;
+  } */
+  100% {
+    background-color: rgb(133, 68, 68);
+  }
+  
+}
+
+.animated-circle {
+  animation: wave 2s infinite;
+}
+
+.delay1 {
+  animation-delay: 0.1s;
+}
+
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup {
+  box-shadow: 3.545px 2.026px 14.179px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+.custom-popup{
+  width: '200px';
+  height: '200px';
+  box-shadow: 3.545px 2.026px 14.179px 0px rgba(0, 0, 0, 0.25);
+  padding: 0px;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+  border: 1px solid #90D44D;
+  border-radius: 12px;
+
+  /* yellow border #F8C83C, green border #90D44D  red border #F43E33 */
+}
