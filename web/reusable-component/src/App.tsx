@@ -1,12 +1,11 @@
 import React from "react";
 // import logo from './logo.svg';
 import "./App.css";
-import Button from "./components/Button";
-import CountryFlag from "./map/countryFlag";
-import MarkerFlag from "map/markerFlag";
 import MapView from "map/mapView";
-import ThreatDetails from "map/threatDetails";
-import CustomPopups from "map/mapExample";
+import ReusableTable from "materialUi/table";
+import MouseOverPopover from "materialUi/checkFile";
+import OverrideColumnMenuGrid from "materialUi/muiTable";
+import Login from "auth/login";
 
 function App() {
   return (
@@ -28,10 +27,16 @@ function App() {
       </header> */}
       {/* <CountryFlag /> */}
       {/* <MarkerFlag /> */}
-      <MapView />
+      {/* <MapView /> */}
       {/* <ThreatDetails /> */}
       {/* <CustomPopups /> */}
 
+      {/* <ReusableTable /> */}
+      {/* working table */}
+      <OverrideColumnMenuGrid />
+
+      {/* <MouseOverPopover /> */}
+      <Login />
     </div>
   );
 }
