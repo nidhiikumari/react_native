@@ -1,15 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TextInput,
-  ImageBackground,
-} from 'react-native';
+import React, {useEffect, useState, useCallback} from 'react';
+import {View, Text, ScrollView, TextInput, ImageBackground} from 'react-native';
 import {MagnifyingGlassIcon} from 'react-native-heroicons/outline';
 // @ts-ignore
-// import Icon from 'react-native-vector-icons/FontAwesome5';
+import {debounce} from 'lodash';
 import Category from './category/category';
 import ReceipeList from './receipeList';
 import {styles} from '../../styles/screenStyles/Home';
@@ -53,9 +46,9 @@ function HomeScreen() {
   //   }
   // }, 500);
 
-  useEffect(() => {
+  // useEffect(() => {
     // debouncedSearch(searchString);
-  }, [searchString]);
+  // }, [searchString]);
 
   const getCategoryWiseMeals = async () => {
     try {
@@ -72,27 +65,36 @@ function HomeScreen() {
     }
   };
 
-  // const getMealsBySearch = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchString}`,
-  //     );
-  //     if (!response?.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     const apiData = await response.json();
-  //     setCategoryWiseList(apiData);
-  //     console.log(apiData, 'appi')
-  //   } catch (error) {
-  //     console.log('Error fetching data:', error);
-  //   }
-  // };
+  const getMealsBySearch = async () => {
+    try {
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchString}`,
+      );
+      if (!response?.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const apiData = await response.json();
+      setCategoryWiseList(apiData);
+      setSelectedCategory(apiData?.meals[0].strCategory);
+      console.log('breakkkkkkkkkkkkkkkkkkk');
+      console.log(apiData, 'appi');
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    }
+  };
+
+  // www.themealdb.com/api/json/v1/1/search.php?s=carrot cake
 
   // www.themealdb.com/api/json/v1/1/filter.php?i=sweets
   console.log(selectedCategory, 'selectedCategory');
 
+  const changeTextHandler = useCallback(debounce(getMealsBySearch, 5000), []);
+
   const changeHandler = (value: any) => {
     setSearchString(value);
+    // if (value !== '') {
+    changeTextHandler();
+    // }
     // getMealsBySearch();
   };
   //  #ffef00  #fff000 #ffc40c #f4ca16
@@ -119,8 +121,13 @@ function HomeScreen() {
   }, []);
 
   useEffect(() => {
-    getCategoryWiseMeals();
+    if (searchString === '') {
+      console.log('category changes');
+      getCategoryWiseMeals();
+    }
   }, [selectedCategory]);
+
+  console.log(searchString === '', 'selectedCategory')
 
   return (
     <>
@@ -151,7 +158,6 @@ function HomeScreen() {
               <MagnifyingGlassIcon color={'gray'} />
             </View>
           </View>
-          {/* <Icon name="movie" size={50} color="red" /> */}
           <View>
             <Category
               mealCategory={mealCategory}
@@ -161,7 +167,7 @@ function HomeScreen() {
           </View>
           <View style={styles.receipeBox}>
             <Text style={styles.categoryText}>{selectedCategory}</Text>
-            <ReceipeList categoryWiseList={categoryWiseList} />
+            <ReceipeList categoryWiseList={categoryWiseList} setSearchString={setSearchString} />
           </View>
         </View>
       </ScrollView>

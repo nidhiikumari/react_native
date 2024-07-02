@@ -6,6 +6,8 @@ import ReusableTable from "materialUi/table";
 import MouseOverPopover from "materialUi/checkFile";
 import OverrideColumnMenuGrid from "materialUi/muiTable";
 import Login from "auth/login";
+import CountryFlag from "country/countryFlag";
+import MarkerFlag from "map/markerFlag";
 
 function App() {
   return (
@@ -26,17 +28,20 @@ function App() {
         </a>
       </header> */}
       {/* <CountryFlag /> */}
-      {/* <MarkerFlag /> */}
+      <MarkerFlag />
       {/* <MapView /> */}
       {/* <ThreatDetails /> */}
       {/* <CustomPopups /> */}
 
       {/* <ReusableTable /> */}
       {/* working table */}
-      <OverrideColumnMenuGrid />
+      {/* <OverrideColumnMenuGrid /> */}
 
       {/* <MouseOverPopover /> */}
-      <Login />
+      {/* <Login /> */}
+
+      {/* country flag */}
+      {/* <CountryFlag /> */}
     </div>
   );
 }

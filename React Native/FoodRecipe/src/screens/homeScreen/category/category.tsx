@@ -8,7 +8,7 @@ function Category({mealCategory, setSelectedCategory, selectedCategory}: any) {
     <View>
       <Text style={styles.categoryText}>Category</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {mealCategory?.meals?.map((items: any, index: any) => (
+        {mealCategory?.meals?.map((items: any) => (
           <Pressable
             onPress={() => setSelectedCategory(items?.strCategory)}
             key={items?.strCategory}

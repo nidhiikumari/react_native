@@ -7,9 +7,10 @@ import {
 } from 'react-native';
 import {styles} from '../styles/screenStyles/ReceipeDetails';
 import Tab from './Tab';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 function ReceipeDetails({navigation, route}: any) {
-  const {item} = route.params;
+  const {item, setSearchString
+  } = route.params;
   const [id, setId] = useState<number>(item?.idMeal);
   const [mealDetails, setMealDetails] = useState<any>();
   const [selectedTab, setSelectedTab] = useState<string>('Ingrediants');
@@ -54,6 +55,7 @@ function ReceipeDetails({navigation, route}: any) {
 
   useEffect(() => {
     getMealsDetailsById();
+    setSearchString('');
   }, []);
 
   return (
@@ -76,6 +78,7 @@ function ReceipeDetails({navigation, route}: any) {
                   <View style={styles.subMenu}>
                     <Text style={styles.menuTitle}>Speciality</Text>
                     <Text style={styles.menuText}>{item?.strArea}</Text>
+                    <Icon name='search' size={40} color ='red' />
                   </View>
                   <View style={styles.subMenu}>
                     <Text style={styles.menuTitle}>

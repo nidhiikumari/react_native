@@ -1,1 +1,0 @@
-This contains web related activities.
